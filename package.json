@@ -1,0 +1,9 @@
+{
+    "name": "rdfaudio", 
+    "license": "MPL 2.0", 
+    "author": "jeff@canuckistani.ca,forked from https://github.com/hubgit/rdfaudio", 
+    "version": "0.1", 
+    "fullName": "RDFaudio for Firefox", 
+    "id": "rdfaudio@canuckistani.ca", 
+    "description": "a basic add-on"
+}
