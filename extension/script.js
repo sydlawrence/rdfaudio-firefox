@@ -1,3 +1,12 @@
+/*
+ * This is a JavaScript Scratchpad.
+ *
+ * Enter some JavaScript, then Right Click or choose from the Execute Menu:
+ * 1. Run to evaluate the selected text,
+ * 2. Inspect to bring up an Object Inspector on the result, or,
+ * 3. Display to insert the result in a comment after the selection.
+ */
+
 findTracks({
 	track: "[typeof='mo:Track'],[typeof='po:MusicSegment']",
 	artist: "[rel='foaf:maker'] [property='foaf:name'],[rel='mo:performer'] [property='foaf:name']",
@@ -13,9 +22,13 @@ function findTracks(selector) {
 		var artist = node.querySelectorAll(selector.artist).item(0).textContent.trim();
 		var title = node.querySelectorAll(selector.title).item(0).textContent.trim();
 
-		addTomahawkTrackLink(node.appendChild(document.createElement("div")), artist, title);
-		addRdioTrackLink(node.appendChild(document.createElement("div")), artist, title);
-		addSpotifyTrackLink(node.appendChild(document.createElement("div")), artist, title);
+
+
+		addTomahawkEmbed(node.appendChild(document.createElement("div")), artist, title);
+
+		//addTomahawkTrackLink(node.appendChild(document.createElement("div")), artist, title);
+		//addRdioTrackLink(node.appendChild(document.createElement("div")), artist, title);
+		//addSpotifyTrackLink(node.appendChild(document.createElement("div")), artist, title);
 	}
 }
 
@@ -31,18 +44,17 @@ function addTomahawkTrackLink(node, artist, title) {
 	node.appendChild(link);
 }
 
-/*
-function addTomahawkEmbed(node, artist, title) {
-	var object = document.createElement("object");
-	object.setAttribute("type", "text/html");
-	object.setAttribute("data", "http://toma.hk/embed.php" + buildQueryString({ artist: artist, title: title }));
-	object.style.width = "100%";
-	object.style.height = "200px";
-	object.style.margin = "10px 0";
 
+function addTomahawkEmbed(node, artist, title) {
+	var object = document.createElement("iframe");
+	object.setAttribute("src", "http://toma.hk/embed.php" + buildQueryString({ artist: artist, title: title }));
+	object.style.width = "120px";
+	object.style.height = "160px";
+	object.style.margin = "10px 0";
+    object.style.border = "none";
 	node.appendChild(object);
 }
-*/
+
 
 function addSpotifyTrackLink(node, artist, title) {
 	var query = 'artist:"' + artist + '" track:"' + title + '"';
