@@ -1,9 +1,9 @@
 {
     "name": "rdfaudio", 
     "license": "MPL 2.0", 
-    "author": "jeff@canuckistani.ca,forked from https://github.com/hubgit/rdfaudio", 
-    "version": "0.1", 
+    "author": "sydlawrence@gmail.com, forked from https://github.com/canuckistani/rdfaudio-firefox,forked from https://github.com/hubgit/rdfaudio", 
+    "version": "0.2", 
     "fullName": "RDFaudio for Firefox", 
-    "id": "rdfaudio@canuckistani.ca", 
-    "description": "a basic add-on"
+    "id": "rdfaudio@tomahawk-player.org", 
+    "description": "An add on to add tomahawk players to rdfa marked up audio"
 }
